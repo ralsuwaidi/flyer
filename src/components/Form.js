@@ -1,20 +1,32 @@
-import { Label, Textarea, TextInput } from "flowbite-react";
+import axios from "axios";
+import { Label, Select, Textarea, TextInput } from "flowbite-react";
 import React from "react";
 
-
-
 export default function FlyerForm(props) {
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    let submitData = {}
+    submitData.eventId = props.eventId
+    submitData.key = props.formList.map(({name}) => name).toString().replaceAll(",", "|")
+
+    for (let index = 0; index < props.formList.length; index++) {
+      const num = index + 1
+      submitData['generic ' + num.toString()] = event.target[index].value
+    }
+    axios.post('/database/rows/table/370/?user_field_names=true',submitData).then(response => console.log(response)).catch(err => console.log(err))
+  }
+
+
   return (
     <>
-      <form action="#" method="POST">
+      <form onSubmit={handleSubmit} >
         <div className=" sm:overflow-hidden sm:rounded-md">
           <div className="space-y-6 bg-white py-5 ">
-           
 
             {props.formList.map((formItem) => (
-              getFormInput(formItem)
+              GetFormInput(formItem)
             ))}
-
             
           </div>
           <div className="px-4 py-3 text-right sm:px-6">
@@ -32,7 +44,7 @@ export default function FlyerForm(props) {
 }
 
 
-function getFormInput(formItem) {
+function GetFormInput(formItem) {
 
   if (formItem.type === 'textarea') {
     return (
@@ -53,8 +65,27 @@ function getFormInput(formItem) {
         />
       </div>
     );
-    
   }
+
+  if (formItem.type === "select") {
+    return (
+      <div id={formItem.id}>
+        <div className="mb-2 block">
+          <Label htmlFor={formItem.id} value={formItem.name} />
+        </div>
+        <Select 
+        id={formItem.id} 
+        required={formItem.required} 
+        helperText={formItem.helperText}
+        >
+          { formItem.options.map((option) => (
+            <option>{option}</option>
+          )) }
+        </Select>
+      </div>
+    );
+  }
+
   return (
     <>
       <div>

@@ -1,56 +1,8 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        gridTemplateRows: {
-          '[auto,auto,1fr]': 'auto auto 1fr',
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
-import { useState } from 'react'
 import FlyerForm from '../components/Form'
 import { Breadcrumb } from 'flowbite-react'
 import { HiListBullet } from "react-icons/hi2";
 import { useParams } from 'react-router-dom'
 import { data } from '../data';
-
-const product = {
-  name: 'Basic Tee 6-Pack',
-  price: '$192',
-  href: '#',
-  image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-  breadcrumbs: [
-    { id: 1, name: 'Men', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
-  ],
-  colors: [
-    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-  ],
-  description:
-    'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-  highlights: [
-    'Hand cut and sewn locally',
-    'Dyed with our proprietary colors',
-    'Pre-washed & pre-shrunk',
-    'Ultra-soft 100% cotton',
-  ],
-  details:
-    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-}
 
 export default function EventDetailView() {
   let { eventId } = useParams();
@@ -83,19 +35,18 @@ export default function EventDetailView() {
             </h1>
           </div>
 
-          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
+          <div className="py-10 lg:col-span-2 px-2 sm:px-0 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
             {/* Description and details */}
             <div>
               <h3 className="sr-only">Description</h3>
-
               <div className="space-y-6">
                 <p className="text-base text-gray-900">{event.description}</p>
               </div>
             </div>
 
+            {/* Highlights */}
             <div className="mt-10">
               <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
                   {event.highlights.map((highlight) => (
@@ -107,9 +58,9 @@ export default function EventDetailView() {
               </div>
             </div>
 
+            {/* Details */}
             <div className="mt-10">
               <h2 className="text-sm font-medium text-gray-900">Details</h2>
-
               <div className="mt-4 space-y-6">
                 <p className="text-sm text-gray-600">{event.details}</p>
               </div>
@@ -117,8 +68,8 @@ export default function EventDetailView() {
           </div>
 
           {/* Form */}
-          <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <FlyerForm formList={event.form} />
+          <div className="mt-4 lg:mt-0">
+            <FlyerForm formList={event.form} eventId={event.id}/>
           </div>
         </div>
       </div>

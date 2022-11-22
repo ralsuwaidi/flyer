@@ -11,10 +11,10 @@ export const CardItem = (props) => {
             alt=""
           />
         <div class="p-5">
-            <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white ">
               {props.event.title}
             </h5>
-          <p class="mb-3 font-sm text-sm text-gray-500 dark:text-gray-400">
+          <p class="mb-3 font-sm text-sm text-gray-500 dark:text-gray-400 text-ellipsis overflow-hidden h-16">
             {props.event.description}
           </p>
         </div>

@@ -11,6 +11,7 @@ Pre-requisite
 
 */
 import { HiMail } from "react-icons/hi";
+import countryList from "react-select-country-list";
 
 
 const data = {
@@ -69,6 +70,16 @@ const data = {
                     helperText: "",
                     disabled: false,
                     readOnly: false,
+                },
+                {
+                    name: "Nationality",
+                    id: "nationality",
+                    type: "select",
+                    required: true,
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                    options: countryList().getLabels()
                 },
                 {
                     name: "Startup Name",

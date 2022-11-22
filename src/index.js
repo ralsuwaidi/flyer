@@ -3,10 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import EventListView from "./Pages/EventListView";
 import reportWebVitals from "./reportWebVitals";
+import axios from "axios";
 
-import { createHashRouter, RouterProvider, Route } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./Pages/ErrorView";
 import EventDetailView from "./Pages/EventDetailView";
+
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+axios.defaults.headers.common["Authorization"] = 'Token ' + process.env.REACT_APP_API_KEY;
+axios.defaults.headers.post["Content-Type"] = "application/json";
 
 const router = createHashRouter([
   {

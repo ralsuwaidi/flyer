@@ -12,7 +12,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className="mb-8 lg:mt-24 mt-12 px-4 md:px-0">
+      <div className="mb-6 lg:mt-24 mt-12 px-4 md:px-0">
         <p className="font-bold text-3xl">{data.title}</p>
         <p className="mt-1 text-gray-500">{data.subheading}</p>
 
