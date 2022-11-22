@@ -4,11 +4,11 @@ import "./index.css";
 import EventListView from "./Pages/EventListView";
 import reportWebVitals from "./reportWebVitals";
 
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createHashRouter, RouterProvider, Route } from "react-router-dom";
 import ErrorPage from "./Pages/ErrorView";
 import EventDetailView from "./Pages/EventDetailView";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <EventListView />,

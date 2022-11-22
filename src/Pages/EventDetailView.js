@@ -40,16 +40,6 @@ const product = {
     { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
     { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
   ],
-  sizes: [
-    { name: 'XXS', inStock: false },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: '2XL', inStock: true },
-    { name: '3XL', inStock: true },
-  ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
   highlights: [
@@ -70,14 +60,12 @@ export default function EventDetailView() {
     <div className="bg-white max-w-2xl lg:max-w-7xl mx-auto px-3  ">
       <div className="pt-6">
 
-    <div className=''>
     <Breadcrumb aria-label="Default breadcrumb">
           <Breadcrumb.Item href="/" icon={HiListBullet}>
             Event List
           </Breadcrumb.Item>
-          <Breadcrumb.Item>{event.title}</Breadcrumb.Item>
+          <Breadcrumb.Item>{event.id}</Breadcrumb.Item>
         </Breadcrumb>
-    </div>
 
 
         <div className="mt-4">
@@ -87,7 +75,7 @@ export default function EventDetailView() {
           />
         </div>
 
-        {/* Product info */}
+        {/* Event info */}
         <div className=" pt-10 pb-16  lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-4 lg:pt-16 lg:pb-24">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
@@ -110,7 +98,7 @@ export default function EventDetailView() {
 
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                  {product.highlights.map((highlight) => (
+                  {event.highlights.map((highlight) => (
                     <li key={highlight} className="text-gray-400">
                       <span className="text-gray-600">{highlight}</span>
                     </li>
@@ -123,14 +111,14 @@ export default function EventDetailView() {
               <h2 className="text-sm font-medium text-gray-900">Details</h2>
 
               <div className="mt-4 space-y-6">
-                <p className="text-sm text-gray-600">{product.details}</p>
+                <p className="text-sm text-gray-600">{event.details}</p>
               </div>
             </div>
           </div>
 
           {/* Form */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <FlyerForm />
+            <FlyerForm formList={event.form} />
           </div>
         </div>
       </div>

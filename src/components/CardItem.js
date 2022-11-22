@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const CardItem = (props) => {
   return (
     <Link to={`events/` + props.event.id}>
-      <div class="md:max-w-md md:mx-auto mx-3 md:m-2 bg-white border border-gray-200 rounded-2xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      <div class="md:max-w-md md:mx-auto mx-3 md:m-2 bg-white border border-gray-200 rounded-2xl  dark:bg-gray-800 dark:border-gray-700">
           <img
             class="rounded-t-2xl object-cover w-full h-32"
             src={props.event.image}
