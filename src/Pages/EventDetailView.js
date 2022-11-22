@@ -20,9 +20,11 @@
   ```
 */
 import { useState } from 'react'
-import { StarIcon } from '@heroicons/react/20/solid'
-import { RadioGroup } from '@headlessui/react'
 import FlyerForm from '../components/Form'
+import { Breadcrumb } from 'flowbite-react'
+import { HiHome } from "react-icons/hi2";
+import { useParams } from 'react-router-dom'
+import { data } from '../data';
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -59,32 +61,39 @@ const product = {
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 }
-const reviews = { href: '#', average: 4, totalCount: 117 }
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function EventDetailView() {
+  let { eventId } = useParams();
+  const event = data.flyers.find( obj => obj.id === eventId);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white max-w-2xl lg:max-w-7xl mx-auto px-3  ">
       <div className="pt-6">
 
-        <div className='px-3  max-w-2xl lg:max-w-7xl mx-auto '>
-            <img src={product.image} className='lg:col-span-2 h-64 lg:h-52 w-full object-cover rounded-xl' />
+    <div className=''>
+    <Breadcrumb aria-label="Default breadcrumb">
+          <Breadcrumb.Item href="/" icon={HiHome}>
+            Home
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>{event.title}</Breadcrumb.Item>
+        </Breadcrumb>
+    </div>
+
+
+        <div className="mt-4">
+          <img
+            src={event.image}
+            className="lg:col-span-2 h-64 lg:h-52 w-full object-cover rounded-xl"
+          />
         </div>
-          
 
         {/* Product info */}
-        <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-          
-       
+        <div className=" pt-10 pb-16  lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-4 lg:pt-16 lg:pb-24">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+              {event.title}
+            </h1>
           </div>
-
-  
 
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
             {/* Description and details */}
@@ -92,7 +101,7 @@ export default function EventDetailView() {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">{product.description}</p>
+                <p className="text-base text-gray-900">{event.description}</p>
               </div>
             </div>
 
@@ -119,13 +128,12 @@ export default function EventDetailView() {
             </div>
           </div>
 
-        {/* Form */}
-        <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <FlyerForm/>
+          {/* Form */}
+          <div className="mt-4 lg:row-span-3 lg:mt-0">
+            <FlyerForm />
           </div>
-
         </div>
       </div>
     </div>
-  )
+  );
 }
