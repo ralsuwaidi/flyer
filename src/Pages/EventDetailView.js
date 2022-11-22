@@ -22,7 +22,7 @@
 import { useState } from 'react'
 import FlyerForm from '../components/Form'
 import { Breadcrumb } from 'flowbite-react'
-import { HiHome } from "react-icons/hi2";
+import { HiListBullet } from "react-icons/hi2";
 import { useParams } from 'react-router-dom'
 import { data } from '../data';
 
@@ -72,8 +72,8 @@ export default function EventDetailView() {
 
     <div className=''>
     <Breadcrumb aria-label="Default breadcrumb">
-          <Breadcrumb.Item href="/" icon={HiHome}>
-            Home
+          <Breadcrumb.Item href="/" icon={HiListBullet}>
+            Event List
           </Breadcrumb.Item>
           <Breadcrumb.Item>{event.title}</Breadcrumb.Item>
         </Breadcrumb>
