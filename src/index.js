@@ -1,13 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import EventListView from "./Pages/EventListView";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import ErrorPage from "./Pages/ErrorView";
+import EventDetailView from "./Pages/EventDetailView";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <EventListView />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "events/:eventId",
+    element: <EventDetailView />,
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
