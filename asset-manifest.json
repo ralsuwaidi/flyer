@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/flyer/static/css/main.ce546fcf.css",
+    "main.js": "/flyer/static/js/main.0bfdf450.js",
+    "static/js/787.75f14a99.chunk.js": "/flyer/static/js/787.75f14a99.chunk.js",
+    "index.html": "/flyer/index.html",
+    "main.ce546fcf.css.map": "/flyer/static/css/main.ce546fcf.css.map",
+    "main.0bfdf450.js.map": "/flyer/static/js/main.0bfdf450.js.map",
+    "787.75f14a99.chunk.js.map": "/flyer/static/js/787.75f14a99.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce546fcf.css",
+    "static/js/main.0bfdf450.js"
+  ]
+}
