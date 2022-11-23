@@ -1,6 +1,7 @@
 import { SlCalender, SlGhost } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import { CardLineIcon } from "./CardIcon";
+import CardIconList from "./CardIconList";
 
 export const CardItem = (props) => {
   return (
@@ -18,9 +19,10 @@ export const CardItem = (props) => {
           <p class="mb-3 font-sm text-sm text-gray-500 dark:text-gray-400 text-ellipsis overflow-hidden h-16">
             {props.event.description}
           </p>
-          {props.event.date && (
-            <CardLineIcon iconText={props.event.date} icon={<SlCalender />} tooltip="no deadline"/>
-          )}
+
+            <CardIconList event={props.event}/>
+
+
         </div>
       </div>
     </Link>

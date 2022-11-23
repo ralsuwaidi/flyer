@@ -11,6 +11,7 @@ Pre-requisite
 
 */
 import { HiMail } from "react-icons/hi";
+import { HiUser } from "react-icons/hi2";
 import countryList from "react-select-country-list";
 
 
@@ -28,7 +29,10 @@ const data = {
                 'Chance to work with a top government agency',
                 'Applications are open'
             ],
-            date: "open",
+            date: {
+                text: "open",
+                tooltip: "There is no deadline",
+            },
             details: "Please fill the form with as much detail as possible. Explain your startup and where you are in your journey.",
             form: [
                 {
@@ -107,6 +111,82 @@ const data = {
                     id: "details",
                     rows: 4,
                     helperText: "Please fill in as much detail as possible about your startup"
+                },
+            ]
+        },
+        {
+            id: "amb-wintercamp",
+            title: "Winter Camp Activity For Students",
+            description: "Winter camp is coming and in the spirit of celebration we would like to come up with an activity for students in two age groups, one is from 11-14 and the other is from 15-18. This event is for ambassadors only where we require you to come up with a fun coding related activity and have the kids participate. The event is on the 10th of Dec",
+            image: "https://images.unsplash.com/photo-1457269449834-928af64c684d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
+            active: true,
+            highlights: [
+                'Come up with your most fun activity',
+                'Help moderate and lead the event (ambassador only)',
+                'Fill the form with the idea you have',
+            ],
+            ambassador_only: true,
+            date: {
+                text: "10th Dec",
+                date: new Date("2022-12-10"),
+                tooltip: "Deadline is on the 10th",
+            },
+            badgeList: [
+                {
+                    icon: <HiUser/>,
+                    text: "ambassador",
+                    tooltip: "Ambassador only",
+                },
+            ],
+            details: "Please come up with a fun activity you think the kids would love. It must be related to coding but feel free to be creative with it. If you dont have an idea then feel free to join if you are interested either way.",
+            form: [
+                {
+                    name: "First name",
+                    id: "first_name",
+                    type: "text",
+                    required: true,
+                    placeholder: "First",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Last name",
+                    id: "last_name",
+                    type: "text",
+                    required: true,
+                    placeholder: "Last",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Email",
+                    id: "email",
+                    type: "email",
+                    required: true,
+                    placeholder: "example@email.com",
+                    helperText: "",
+                    icon: HiMail,
+                    disabled: false,
+                    readOnly: false,  
+                },
+                {
+                    name: "Phone",
+                    id: "phone",
+                    type: "text",
+                    required: true,
+                    placeholder: "05XXXXXXXX",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Activity Idea",
+                    type: "textarea",
+                    id: "details",
+                    rows: 4,
+                    helperText: "Explain your idea here"
                 },
             ]
         },

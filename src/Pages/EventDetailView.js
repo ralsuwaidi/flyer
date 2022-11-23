@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet-async";
 import { CardLineIcon } from "../components/CardIcon";
 import { SlCalender } from "react-icons/sl";
 import { useState } from "react";
+import CardIconList from "../components/CardIconList";
 
 export default function EventDetailView() {
   let { eventId } = useParams();
@@ -64,15 +65,11 @@ export default function EventDetailView() {
               </h1>
 
               <div className="mt-5">
-                <CardLineIcon
-                  iconText={event.date}
-                  icon={<SlCalender />}
-                  tooltip="no deadline"
-                />
+                <CardIconList event={event} />
               </div>
             </div>
 
-            <div className="py-10 lg:col-span-2 px-2 sm:px-0 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
+            <div className="py-10 lg:col-span-2 px-2 sm:px-0 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-5 lg:pb-16 lg:pr-8">
               {/* Description and details */}
               <div>
                 <h3 className="sr-only">Description</h3>
