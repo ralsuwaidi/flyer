@@ -278,7 +278,94 @@ const data = {
                 },
             ]
         },
-        
+        {
+            id: "amb-nationalday",
+            title: "Carnival at Al Mawakeb School, Al Barsha",
+            description: "The national day is aroud the corner and Al Mawakeb School, Al Barsha is hosting a carnival for its students (Grade 1-12), staff, and parents in celebration of the national day. We would like Ambassadors to contribute by volunteering in the event and coming up with acitvity ideas.",
+            image: "https://images.unsplash.com/photo-1544441452-326ff5a947fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            active: true,
+            highlights: [
+                'Come up with your most fun activity',
+                'In celebration of the UAE National Day',
+                'On Tuesday the 29th of Nov',
+                'The event will be from 8:00am to 10:30am.',
+            ],
+            ambassador_only: false,
+            date: {
+                text: "29th Nov",
+                date: new Date("2022-11-29"),
+                tooltip: "Deadline is on the 29th",
+            },
+            badgeList: [
+                {
+                    icon: <HiUsers/>,
+                    text: "public",
+                    tooltip: "Anyone can join",
+                },
+                {
+                    icon: <HiUser/>,
+                    text: "ambassador",
+                    tooltip: "Ambassador lead",
+                },
+            ],
+            details: "The PoC for the event is Muhammad Arsalan Nawazish and we require Ambassadors to volunteer in the event itself and come up with acitvities we could conduct.",
+            form: [
+                {
+                    name: "First name",
+                    id: "first_name",
+                    type: "text",
+                    required: true,
+                    placeholder: "First",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Last name",
+                    id: "last_name",
+                    type: "text",
+                    required: true,
+                    placeholder: "Last",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Email",
+                    id: "email",
+                    type: "email",
+                    required: true,
+                    placeholder: "example@email.com",
+                    helperText: "",
+                    icon: HiMail,
+                    disabled: false,
+                    readOnly: false,  
+                },
+                {
+                    name: "Phone",
+                    id: "phone",
+                    type: "text",
+                    required: true,
+                    placeholder: "05XXXXXXXX",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Activity Idea",
+                    type: "textarea",
+                    id: "details",
+                    rows: 4,
+                    helperText: "Explain your idea here"
+                },
+                {
+                    name: "Are you an ambassador?",
+                    type: "checkbox",
+                    id: "ambassador",
+                    helperText: "Tick if true"
+                },
+            ]
+        },
     ],
 }
 
