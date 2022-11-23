@@ -9,6 +9,9 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./Pages/ErrorView";
 import EventDetailView from "./Pages/EventDetailView";
 
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
+
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 axios.defaults.headers.common["Authorization"] = 'Token ' + process.env.REACT_APP_API_KEY;
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -25,10 +28,14 @@ const router = createHashRouter([
   },
 ]);
 
+const helmetContext = {};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider context={helmetContext}>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </React.StrictMode>
 );
 

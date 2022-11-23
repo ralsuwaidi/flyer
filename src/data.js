@@ -20,7 +20,7 @@ const data = {
             id: "pub-cybersec",
             title: "Top 5 Cyber-Security Startups",
             description: "Coders HQ is working with Dubai Police to find the best local Cyber Security Startups. If you have a cyber security startup then please fill the form for a chance to work with Dubai Police.",
-            image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tcHV0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+            image: "https://images.unsplash.com/photo-1538115081112-32c7d8401807?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
             active: true,
             highlights: [
                 'Dubai Police are looking for cyber security startups',
@@ -94,7 +94,7 @@ const data = {
                 {
                     name: "Website",
                     id: "website",
-                    type: "url",
+                    type: "text",
                     placeholder: "",
                     required: false,
                     addon: "https://",
@@ -109,27 +109,7 @@ const data = {
                 },
             ]
         },
-        {
-            id: "event-2",
-            title: "This is title one",
-            description: "This is a larger description",
-            image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tcHV0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-            active: true,
-        },
-        {
-            id: "event-2",
-            title: "This is title one",
-            description: "This is a larger description",
-            image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tcHV0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-            active: true,
-        },
-        {
-            id: "event-2",
-            title: "This is title one",
-            description: "This is a larger description",
-            image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tcHV0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-            active: true,
-        }
+        
     ],
 }
 

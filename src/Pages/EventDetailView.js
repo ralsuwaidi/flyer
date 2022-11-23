@@ -3,12 +3,21 @@ import { Breadcrumb } from 'flowbite-react'
 import { HiListBullet } from "react-icons/hi2";
 import { useParams } from 'react-router-dom'
 import { data } from '../data';
+import { Helmet } from "react-helmet-async";
 
 export default function EventDetailView() {
   let { eventId } = useParams();
   const event = data.flyers.find( obj => obj.id === eventId);
 
   return (
+    <>
+          <Helmet>
+        <title>{event.title}</title>
+        <meta
+          name="description"
+          content={event.description}
+        />
+      </Helmet>
     <div className="bg-white max-w-2xl lg:max-w-7xl mx-auto px-3  ">
       <div className="pt-6">
 
@@ -74,5 +83,6 @@ export default function EventDetailView() {
         </div>
       </div>
     </div>
+    </>
   );
 }
