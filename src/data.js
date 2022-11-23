@@ -28,6 +28,7 @@ const data = {
                 'Chance to work with Dubai Police',
                 'Applications are open'
             ],
+            date: "open",
             details: "Please fill the form with as much detail as possible. Explain your startup and where you are in your journey.",
             form: [
                 {

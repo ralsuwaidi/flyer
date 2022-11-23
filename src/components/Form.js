@@ -7,10 +7,11 @@ export default function FlyerForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
     let submitData = {}
-    submitData.eventId = props.eventId
-    submitData.key = props.formList.map(({name}) => name).toString().replaceAll(",", "|")
+    submitData.eventId = props.event.id
+    submitData.key = props.event.form.map(({name}) => name).toString().replaceAll(",", "|")
+    submitData.description = props.event.description
 
-    for (let index = 0; index < props.formList.length; index++) {
+    for (let index = 0; index < props.event.form.length; index++) {
       const num = index + 1
       submitData['generic ' + num.toString()] = event.target[index].value
     }
@@ -24,7 +25,7 @@ export default function FlyerForm(props) {
         <div className=" sm:overflow-hidden sm:rounded-md">
           <div className="space-y-6 bg-white py-5 ">
 
-            {props.formList.map((formItem) => (
+            {props.event.form.map((formItem) => (
               GetFormInput(formItem)
             ))}
             
