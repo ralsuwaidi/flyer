@@ -11,7 +11,7 @@ Pre-requisite
 
 */
 import { HiMail } from "react-icons/hi";
-import { HiUser } from "react-icons/hi2";
+import { HiUser, HiUsers } from "react-icons/hi2";
 import countryList from "react-select-country-list";
 
 
@@ -187,6 +187,94 @@ const data = {
                     id: "details",
                     rows: 4,
                     helperText: "Explain your idea here"
+                },
+            ]
+        },
+        {
+            id: "amb-nationalday",
+            title: "UAE National Day Activity",
+            description: "The national day is aroud the corner and we would like to activate the Coders(hq) space. If you would like to use this time and come up with an idea realted to the national day then please suggest your idea in the form below. This activity will be lead by the ambassadors but will be for the public and to celebrate the UAE national day.",
+            image: "https://images.unsplash.com/photo-1583012802443-efc6e8b00f5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            active: true,
+            highlights: [
+                'Come up with your most fun activity',
+                'In celebration of the UAE National Day',
+                'On Wednesday the 30th of Nov',
+                'The event can last from the morning to the afternoon',
+            ],
+            ambassador_only: false,
+            date: {
+                text: "30th Nov",
+                date: new Date("2022-11-30"),
+                tooltip: "Deadline is on the 30th",
+            },
+            badgeList: [
+                {
+                    icon: <HiUsers/>,
+                    text: "public",
+                    tooltip: "Anyone can join",
+                },
+                {
+                    icon: <HiUser/>,
+                    text: "ambassador",
+                    tooltip: "Ambassador lead",
+                },
+            ],
+            details: "The event is public but must be lead by an ambassador. The event will not take place if an ambassador is not available to take the lead.",
+            form: [
+                {
+                    name: "First name",
+                    id: "first_name",
+                    type: "text",
+                    required: true,
+                    placeholder: "First",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Last name",
+                    id: "last_name",
+                    type: "text",
+                    required: true,
+                    placeholder: "Last",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Email",
+                    id: "email",
+                    type: "email",
+                    required: true,
+                    placeholder: "example@email.com",
+                    helperText: "",
+                    icon: HiMail,
+                    disabled: false,
+                    readOnly: false,  
+                },
+                {
+                    name: "Phone",
+                    id: "phone",
+                    type: "text",
+                    required: true,
+                    placeholder: "05XXXXXXXX",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Activity Idea",
+                    type: "textarea",
+                    id: "details",
+                    rows: 4,
+                    helperText: "Explain your idea here"
+                },
+                {
+                    name: "Are you an ambassador?",
+                    type: "checkbox",
+                    id: "ambassador",
+                    helperText: ""
                 },
             ]
         },
