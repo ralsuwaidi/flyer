@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/flyer/static/css/main.09a74b33.css",
-    "main.js": "/flyer/static/js/main.c4e620c1.js",
+    "main.css": "/flyer/static/css/main.4c6ed1fb.css",
+    "main.js": "/flyer/static/js/main.63f65f3f.js",
     "static/js/787.75f14a99.chunk.js": "/flyer/static/js/787.75f14a99.chunk.js",
     "index.html": "/flyer/index.html",
-    "main.09a74b33.css.map": "/flyer/static/css/main.09a74b33.css.map",
-    "main.c4e620c1.js.map": "/flyer/static/js/main.c4e620c1.js.map",
+    "main.4c6ed1fb.css.map": "/flyer/static/css/main.4c6ed1fb.css.map",
+    "main.63f65f3f.js.map": "/flyer/static/js/main.63f65f3f.js.map",
     "787.75f14a99.chunk.js.map": "/flyer/static/js/787.75f14a99.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.09a74b33.css",
-    "static/js/main.c4e620c1.js"
+    "static/css/main.4c6ed1fb.css",
+    "static/js/main.63f65f3f.js"
   ]
 }
