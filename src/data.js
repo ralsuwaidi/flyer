@@ -19,13 +19,13 @@ const data = {
         {
             id: "pub-cybersec",
             title: "Top 5 Cyber-Security Startups",
-            description: "Coders HQ is working with Dubai Police to find the best local Cyber Security Startups. If you have a cyber security startup then please fill the form for a chance to work with Dubai Police.",
-            image: "https://images.unsplash.com/photo-1538115081112-32c7d8401807?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+            description: "Coders HQ is working with Government entity partner to find the best local Cyber Security Startups. If you have a cyber security startup then please fill the form for a chance to work with one of our partners.",
+            image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
             active: true,
             highlights: [
-                'Dubai Police are looking for cyber security startups',
+                'Coders(hq) partner are looking for cyber security startups',
                 'Top 5 will be selected',
-                'Chance to work with Dubai Police',
+                'Chance to work with a top government agency',
                 'Applications are open'
             ],
             date: "open",
