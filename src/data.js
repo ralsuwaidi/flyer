@@ -194,7 +194,7 @@ const data = {
             id: "amb-nationalday",
             title: "UAE National Day Activity",
             description: "The national day is aroud the corner and we would like to activate the Coders(hq) space. If you would like to use this time and come up with an idea realted to the national day then please suggest your idea in the form below. This activity will be lead by the ambassadors but will be for the public and to celebrate the UAE national day.",
-            image: "https://images.unsplash.com/photo-1583012802443-efc6e8b00f5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            image: "https://images.unsplash.com/photo-1603798994946-5ea9dbacf20e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
             active: true,
             highlights: [
                 'Come up with your most fun activity',
