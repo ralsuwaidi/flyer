@@ -10,7 +10,8 @@ function EventListView() {
         <title>Coders(hq) flyer</title>
         <meta
           name="description"
-          content="Find an event that you would like to participate in and fill the form."
+          content="Find an active flyer and participate as a judge, attendee or even a host. All our events are different."
+          title="Flyer List"
         />
       </Helmet>
       <div className="max-w-5xl mx-auto">

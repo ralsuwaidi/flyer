@@ -3,7 +3,7 @@ import { Switch } from '@headlessui/react'
 
 
 const data = {
-  title: "Event List",
+  title: "Flyer List",
   subheading: "Participate or host any of our active event!",
 };
 
