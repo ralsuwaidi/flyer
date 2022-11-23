@@ -20,10 +20,13 @@ export default function EventDetailView() {
         <title>{event.title}</title>
         <meta name="description" content={event.description} />
       </Helmet>
+
+
+      {/* Breadcrumb */}
       <div className="bg-white max-w-2xl lg:max-w-7xl mx-auto px-3  ">
         <div className="pt-6">
           <Breadcrumb aria-label="Default breadcrumb">
-            <Breadcrumb.Item href="/" icon={HiListBullet}>
+            <Breadcrumb.Item href="/flyer" icon={HiListBullet}>
               Event List
             </Breadcrumb.Item>
             <Breadcrumb.Item>{event.id}</Breadcrumb.Item>
