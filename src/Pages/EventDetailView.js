@@ -1,15 +1,17 @@
 import FlyerForm from "../components/Form";
-import { Alert, Breadcrumb } from "flowbite-react";
-import { HiListBullet } from "react-icons/hi2";
+import { Breadcrumb, Button, Modal } from "flowbite-react";
+import { HiListBullet, HiOutlineCheck } from "react-icons/hi2";
 import { useParams } from "react-router-dom";
 import { data } from "../data";
 import { Helmet } from "react-helmet-async";
 import { CardLineIcon } from "../components/CardIcon";
 import { SlCalender } from "react-icons/sl";
+import { useState } from "react";
 
 export default function EventDetailView() {
   let { eventId } = useParams();
   const event = data.flyers.find((obj) => obj.id === eventId);
+  const [showModal, setShowModal] = useState(false)
 
   return (
     <>
@@ -34,6 +36,23 @@ export default function EventDetailView() {
             />
           </div>
 
+          <Modal show={showModal} size="md" popup={true} onClose={() => {setShowModal(false)}}>
+            <Modal.Header />
+            <Modal.Body>
+              <div className="text-center">
+                <HiOutlineCheck className="mx-auto mb-4 h-14 w-14 text-white dark:text-gray-200 bg-green-400 rounded-full" />
+                <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+                  Your form has been submitted!
+                </h3>
+                <div className="flex justify-center gap-4">
+                  <Button color="gray" onClick={() => {setShowModal(false)}}>
+                    close
+                  </Button>
+                </div>
+              </div>
+            </Modal.Body>
+          </Modal>
+
           {/* Event info */}
           <div className=" pt-10 pb-16  lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-4 lg:pt-16 lg:pb-24">
             <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
@@ -42,7 +61,11 @@ export default function EventDetailView() {
               </h1>
 
               <div className="mt-5">
-                <CardLineIcon iconText={event.date} icon={<SlCalender />} tooltip="no deadline"/>
+                <CardLineIcon
+                  iconText={event.date}
+                  icon={<SlCalender />}
+                  tooltip="no deadline"
+                />
               </div>
             </div>
 
@@ -82,7 +105,7 @@ export default function EventDetailView() {
 
             {/* Form */}
             <div className="mt-4 lg:mt-0">
-              <FlyerForm event={event} />
+              <FlyerForm event={event} setShowModal={setShowModal} />
             </div>
           </div>
         </div>

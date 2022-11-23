@@ -16,6 +16,8 @@ export default function FlyerForm(props) {
       submitData['generic ' + num.toString()] = event.target[index].value
     }
     axios.post('/database/rows/table/370/?user_field_names=true',submitData).then(response => console.log(response)).catch(err => console.log(err))
+    props.setShowModal(true)
+    event.target.reset();
   }
 
 
