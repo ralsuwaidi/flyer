@@ -4,7 +4,7 @@ import { Switch } from '@headlessui/react'
 
 const data = {
   title: "Event List",
-  subheading: "Find one of our active events and fill the form to join",
+  subheading: "Participate or host any of our active event!",
 };
 
 export const Header = () => {
