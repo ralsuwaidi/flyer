@@ -1,15 +1,4 @@
 
-/* 
-Id
-Title
-Date
-Time
-Duration
-Description
-Active
-Pre-requisite
-
-*/
 import { HiMail } from "react-icons/hi";
 import { HiUser, HiUsers } from "react-icons/hi2";
 import countryList from "react-select-country-list";
@@ -364,6 +353,128 @@ const data = {
                     id: "ambassador",
                     helperText: "Tick if true"
                 },
+            ]
+        },
+        {
+            id: "pub-gamingtalent",
+            title: "Call to UAE Gaming Talent",
+            description: "We are looking for local gaming talent that are within the gaming field. If are a designer, 3D artist, developer or have experience in any field related to gaming then please sign up below. The top 100 will be picked for a special course with one of our partners to be trained with one of the top gaming companies in the world.",
+            image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
+            active: true,
+            highlights: [
+                'This is a call to: Designers',
+                'Developers',
+                '3D Artists',
+                'Animators',
+                'Story Writers',
+                'And any other field related to game development',
+            ],
+            ambassador_only: false,
+            date: {
+                text: "open",
+                // date: new Date("2022-11-29"),
+                tooltip: "This project has no deadline",
+            },
+            badgeList: [
+                {
+                    icon: <HiUsers/>,
+                    text: "public",
+                    tooltip: "Anyone can join",
+                },
+            ],
+            details: "Please fill in the form with your details and your field. We will get back to you if you are selected among the top 100.",
+            form: [
+                {
+                    name: "First name",
+                    id: "first_name",
+                    type: "text",
+                    required: true,
+                    placeholder: "First",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Last name",
+                    id: "last_name",
+                    type: "text",
+                    required: true,
+                    placeholder: "Last",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Email",
+                    id: "email",
+                    type: "email",
+                    required: true,
+                    placeholder: "example@email.com",
+                    helperText: "",
+                    icon: HiMail,
+                    disabled: false,
+                    readOnly: false,  
+                },
+                {
+                    name: "Phone",
+                    id: "phone",
+                    type: "text",
+                    required: true,
+                    placeholder: "05XXXXXXXX",
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Nationality",
+                    id: "nationality",
+                    type: "select",
+                    required: true,
+                    helperText: "",
+                    disabled: false,
+                    readOnly: false,
+                    options: countryList().getLabels()
+                },
+                {
+                    name: "Highest Academic Qualification",
+                    id: "academic",
+                    type: "text",
+                    required: true,
+                    placeholder: "Masters in Computer Science",
+                    helperText: "Please fill in your highest qualification",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "University",
+                    id: "university",
+                    type: "text",
+                    required: false,
+                    placeholder: "Khalifa University",
+                    helperText: "Which university did you graduate from",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Specialisation Field",
+                    id: "field",
+                    type: "text",
+                    required: true,
+                    placeholder: "3D Artist, Sound Designer",
+                    helperText: "Which gaming related field do you have experience in",
+                    disabled: false,
+                    readOnly: false,
+                },
+                {
+                    name: "Years of Experience",
+                    id: "experience_years",
+                    type: "number",
+                    required: false,
+                    placeholder: "3",
+                    helperText: "Years of experience in your field",
+                    disabled: false,
+                    readOnly: false,
+                }
             ]
         },
     ],

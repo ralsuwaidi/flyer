@@ -1,6 +1,4 @@
-import { SlCalender, SlGhost } from "react-icons/sl";
 import { Link } from "react-router-dom";
-import { CardLineIcon } from "./CardIcon";
 import CardIconList from "./CardIconList";
 
 export const CardItem = (props) => {
