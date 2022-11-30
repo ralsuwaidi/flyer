@@ -1,12 +1,19 @@
 import { CardItem } from "./CardItem";
 import { data } from "../data";
 
-
-
-export default function CardList() {
-  const flyerList = data.flyers.map((data) => (
+export default function CardList(props) {
+  const flyerList = data.flyers
+  .filter(function(obj){
+    if (!props.showAll) {
+      
+      return obj.active
+    }
+    return obj
+  })
+  .map((data) => 
+  (
     <div key={data.id} className="my-5 md:my-0">
-      <CardItem event={data}  />
+      <CardItem event={data} />
     </div>
   ));
 

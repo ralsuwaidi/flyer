@@ -2,8 +2,10 @@ import "../App.css";
 import { Header } from "../components/Header";
 import CardList from "../components/CardList";
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
 
 function EventListView() {
+  const [showAll, setShowAll] = useState(false)
   return (
     <>
       <Helmet>
@@ -15,8 +17,8 @@ function EventListView() {
         />
       </Helmet>
       <div className="max-w-5xl mx-auto">
-        <Header />
-        <CardList />
+        <Header setShowAll={setShowAll} showAll={showAll}/>
+        <CardList showAll={showAll} />
       </div>
     </>
   );
